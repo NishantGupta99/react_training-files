@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learn es6</title>
+</head>
+
+<body>
+    <h1>We are learning ES6</h1>
+    <script>
+        //  const x = 10;                     // const  is used to define a constant and similar to let it is also blocked scope  
+        //  x=5;
+        //       function sayHello() {
+        //     for (let i = 0; i < 5; i++) { // we use let to define a variable with the scope of a block of code start using
+        //         console.log(i);           // we use var keyword to define a keyword with the scope fo a function dont use 
+        //                                                
+        //     }
+        //     console.log(i);
+        //    }
+        //    sayHello();
+
+        // function createanobjk() { // an object can be created inside an function
+        //     const student ={
+        //         name: "myname",
+        //         roll: 23
+
+        //     }
+        //     console.log(student);
+
+        // }
+        // createanobjk();
+
+        // let person = { // this is how 
+        //     name: "Nishant",
+        //     contact: 8545956515,
+        //     walk: function() {
+        //         console.log("nishant is walking"); // this is the old way to deifne a method
+        //     },
+        //     talk() { 
+        //         console.log("Nishant is talking a lot"); // method i have defined  using es6 syntax
+
+        //     }
+        // };
+        // person.talk();
+        // person.walk(); // the dot notation
+        // console.log(person.name);
+        // console.log(person.contact); // using the dot notation i can access the property from an object 
+        // console.log(person); 
+
+        // const person ={
+        //     name: "Nishant",
+        //     roll: 54,
+        //     walk() {
+        //         const food= "eaten";
+        //         console.log(food);
+        //         console.log(this); // this is a special keyword in js which points to the property of an parent object 
+
+        //     }
+        // };
+
+        // person.walk();
+
+        // const walk = person.walk.bind(person); // pointing a constant to a method and creating a function
+        // walk(); // calling the function to see if it prints the this keyword 
+        // // bind keyword allows us to acces a this from an external function 
+
+        //  const square = function(number) {
+        //return number * number;
+        //} // the old way to write a function 
+
+
+        //    const square = number => number * number;  // fat arrow function or you can call this inline function or arrow function   
+        //    console.log(square(7));   
+
+        //    const jobs = [ // [] are used to define array in JavaScript
+        //        {id:1, type:"compiling", isActive: true},
+        //        {id:2, type:"testing", isActive: true},
+        //        {id:3, type:"debugging", isActive: false}
+        //    ]
+
+        // //  const activeJobs = jobs.filter(function(job){return job.activeJobs}); // perfect example to use an fat arrow function 
+        //   const activeJobs = jobs.filter(job =>  job.isActive); 
+        // //    console.log(activeJobs);
+
+
+        // const person= {
+        //     talk() {
+        //         const self = this;
+        //         setTimeout(function() {
+        //             console.log("self",self); // this is the old way of calling an callback function using the this keyword 
+        //         }, 2000)
+
+        //     }
+
+        // };
+
+        // const person= {
+        //     talk() {
+        //        // const self = this;
+        //         setTimeout( () => 
+        //             console.log("this",this)  // this is the old way of calling an callback function using the this keyword 
+        //         , 2000)
+
+        //     }
+
+        // };
+        // person.talk();
+
+        // const address = {
+        //     street: "Church Street",
+        //     city: "Bangalore",
+        //     country: "India"
+        // }
+
+        // const street = address.street; // we are storing property of the object into a variable using the old way 
+        // const city = address.city;
+        // const country = address.country;
+
+        // const {street , city} = address; // this line of code over here is equal to the three lines of code you see from line 115 to 118
+
+        // console.log(city);
+
+        // const first = [1,2,3];
+        // const second = [4,5,6];
+
+        // const combined = first.concat(second);
+
+        // const combined = [...first, ...second, 23,55,98,65 , "Numbers"];
+        // the spread ioperator unpacks the elements of the array we are using it with into the array we are calling it inside
+        // console.log(combined);
+
+        // class Person {
+        //     constructor(name1) {
+        //         this.name = name1;
+        //         this.dept = "testing";
+
+        //     }
+        //     walk() {
+        //         console.log(this.name + " walking");
+        //     }
+        // }
+        // const person = new Person("Nishant");
+        // const person2 = new Person("Ajay");
+
+        // console.log(person2.name);
+        // console.log(person2.dept);
+        // person2.walk();
+
+
+        function BirthDay() {
+            return new Promise(function (resolve, reject) { // resolve is a parameter which handles my sucess of the promise
+                setTimeout(() => {
+                    const party = true;
+                    if (party) {
+                        console.log(" Function: your promise has been resolved");
+                        resolve();
+                    }
+                    else {
+                        console.log("Function the promise has not been resolved!");
+                        reject();                            // reject is a parameter which handles my rejection of the promise
+                    }
+                }, 2000);
+            })
+        }
+
+        BirthDay().then( function() {
+            console.log("Welcome to my bday party"); // is used to say what to do when sucess has been achieved 
+        }).catch(function() {
+            console.log("I am so sorry but the party has been cancelled"); // is used what to do when we havent achived what we were looking for 
+        })
+    </script>
+
+</body>
+
+</html>
